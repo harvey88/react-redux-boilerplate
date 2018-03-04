@@ -1,0 +1,38 @@
+Start dev environment:
+
+    npm install
+    npm run dev
+
+Here you can find also:
+
+    - connected store with reducers example and actions example
+    - connected routing
+    - connected redux-logger
+    - react-final-form
+    - webpack dev server and hot reload
+
+    - useful functions for cookies (clearAllCookies, getCookie, setCookie, getAllCookies, formatAMPM, createDateTimeString)
+    - httpService with error handling based on axios and react-s-alert
+
+    - custom pagination
+    - simple custom loader
+    - simple action button
+
+    - login form example with httpService usage
+
+Next dependencies can be added as needed:
+
+    "react-custom-scrollbars": "4.2.1",
+    "react-loaders": "3.0.1",
+    "loaders.css": "0.1.2",
+    "react-paginate": "5.0.0",
+    "google-maps-react": "1.1.2",
+    "react-autocomplete": "1.8.1",
+    "react-avatar-editor": "10.3.0",
+    "react-tooltip": "3.4.0",
+
+    "js-to-styles-var-loader": "1.1.0"
+
+        if you want share vars around js and less you need this loader;
+        to use create styles.js with consts and plug in to less file as:
+            require("./constants/styles.js");  --

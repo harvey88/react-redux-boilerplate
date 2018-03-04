@@ -1,0 +1,57 @@
+@import './constants';
+
+.auth_page {
+  height: 100vh;
+  max-height: 100vh;
+  justify-content: center;
+  background-color: @page_block_bg_color;
+  &_logo {
+    width: 20%;
+    min-width: 10rem;
+  }
+  &_form {
+    width: 100%;
+    &_field {
+      height: 3rem;
+      &_input {
+        height: 2rem;
+        width: 40%;
+        max-width: 25rem;
+        min-width: 10rem;
+        outline: none;
+        border: none;
+        border-bottom: .1rem solid @main_font_color_light;
+        color: @main_font_color;
+        &_error {
+          border-bottom: .1rem solid @action_color;
+        }
+        &::placeholder {
+          color: @main_font_color_light;
+        }
+      }
+      &_error {
+        height: 1rem;
+        color: @action_color;
+        font-size: @button_font_size;
+      }
+    }
+    &_controls {
+      margin-top: 1rem;
+      &_or_block {
+        margin: 0.3rem 0;
+        font-weight: 600;
+      }
+      .ping_button {
+        width: 40%;
+        max-width: 25rem;
+      }
+    }
+  }
+  &_to_register {
+    font-size: @button_font_size;
+    &_link {
+      color: @action_color;
+      font-weight: 600;
+    }
+  }
+}

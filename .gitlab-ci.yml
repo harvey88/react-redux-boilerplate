@@ -1,0 +1,38 @@
+# image: ubuntu:latest
+stages:
+  # - test
+  - build
+  - deploy
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  GIT_SSL_NO_VERIFY: "true"
+
+# before_script:
+#     - apt-get update
+#     - apt-get install sshpass -y
+#     #- sshpass -p "$PASSWORD" ssh root@$REMOTE_IP
+#     - sshpass -p "3OuURhkyiq3" ssh -t -T root@37.48.67.169
+
+# test:
+#   stage: test
+#   script:
+#     - ssh -t root@37.48.67.169 "ls"
+
+build:
+   image: docker:latest
+   services:
+    - docker:dind
+   stage: build
+   script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.k-3soft.com
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+
+deploy:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  only:
+   - master
+  script:
+    - upgrade --stack ping --service frontend
