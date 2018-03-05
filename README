@@ -18,7 +18,7 @@ Here you can find also:
     - simple custom loader
     - simple action button
 
-    - login form example with httpService usage
+    - login form example (react-final-form) with httpService usage
 
 Next dependencies can be added as needed:
 
