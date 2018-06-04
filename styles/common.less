@@ -2,6 +2,7 @@
 @import './auth_page';
 @import './button';
 @import './utils';
+@import './breadcrumbs';
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 html {
@@ -101,4 +102,20 @@ a {
     text-align: center;
     cursor: pointer;
     display: block;
+}
+
+.page_loader {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.block_loader {
+    width: 100%;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
 }

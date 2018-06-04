@@ -163,26 +163,40 @@ const Loader = (props) => {
     const dots = new Array(props.dotsCount)
     dots.fill(1)
     return (
-        <Wrapper color={props.color} radius={props.radius} dotSize={props.dotSize}>
-            {dots.map((el, i) => <div className={'sk-circle' + (i + 1) + ' sk-circle'} key={i}></div>)}
+        <Wrapper color={props.color} radius={props.radius} dotSize={props.dotSize} className={`ping-loader ${props.className ? props.className : ''}`}>
+    {dots.map((el, i) => <div className={'sk-circle' + (i + 1) + ' sk-circle'} key={i}></div>)}
         </Wrapper>
     )
-}
+    }
 
-Loader.propTypes = {
-    color: PropTypes.string.isRequired,
-    dotsCount: PropTypes.number.isRequired,
-    dotSize: PropTypes.string.isRequired,
-    radius: PropTypes.string.isRequired,
-}
+    const PageLoader = (props) => {
+        return <div className='page_loader'>
+            <Loader {...props}/>
+        </div>
+    }
 
-Loader.defaultProps = {
-    color: 'red',
-    dotsCount: 12,
-    radius: '60px',
-    dotSize: '15%'
-}
+    const BlockLoader = (props) => {
+        return <div className='block_loader'>
+            <Loader {...props}/>
+        </div>
+    }
 
-export {
-    Loader as default
-}
+    Loader.propTypes = {
+        color: PropTypes.string.isRequired,
+        dotsCount: PropTypes.number.isRequired,
+        dotSize: PropTypes.string.isRequired,
+        radius: PropTypes.string.isRequired,
+    }
+
+    Loader.defaultProps = {
+        color: 'red',
+        dotsCount: 12,
+        radius: '60px',
+        dotSize: '15%'
+    }
+
+    export {
+        Loader as default,
+        PageLoader,
+        BlockLoader
+    }

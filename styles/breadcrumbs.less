@@ -1,0 +1,26 @@
+@import './constants';
+
+.breadcrumbs {
+
+        display: flex;
+        align-items: center;
+        padding: @page_offset;
+        border-bottom: 1px solid @page_bg_color;
+        font-size: @small_font_size;
+
+        &_arrow_icon {
+            width: .5rem;
+            height: .5rem;
+            fill: @main_font_color;
+            margin: 0 0.5rem;
+        }
+
+        &_name {
+            text-decoration: none;
+
+            &_link {
+                color: @breadcrumbs_font_color;
+            }
+        }
+
+}
