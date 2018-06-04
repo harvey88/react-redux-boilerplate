@@ -29,10 +29,10 @@ build:
     - docker build -t $IMAGE_TAG .
     - docker push $IMAGE_TAG
 
-deploy:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  only:
-   - master
-  script:
-    - upgrade --stack ping --service frontend
+#deploy:
+#  stage: deploy
+#  image: cdrx/rancher-gitlab-deploy
+#  only:
+#   - master
+#  script:
+#    - upgrade --stack ping --service frontend
