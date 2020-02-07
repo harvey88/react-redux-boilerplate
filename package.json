@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SiriyDimitriy/ping"
+    "url": "https://github.com/"
   },
   "keywords": [
     "react"
   ],
-  "author": "Dimitriy",
+  "author": "Elijah",
   "license": "ISC",
   "dependencies": {
     "axios": "0.17.1",
